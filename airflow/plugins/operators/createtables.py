@@ -7,7 +7,7 @@ from airflow.utils.decorators import apply_defaults
 class CreateTablesOperator(BaseOperator):
     @apply_defaults
     def __init__(self, redshift_id = "", sql_commands = "", *args, **kwargs):
-        super().__init__(*args, **kwargs)
+        super(CreateTablesOperator).__init__(*args, **kwargs)
         self.redshift_id = redshift_id
         self.sql_commands = sql_commands
 
