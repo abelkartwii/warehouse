@@ -22,7 +22,7 @@ default_args = {
 dag = DAG(
     'etl_dag',
     default_args = default_args,
-    description = 'ETL pipeline to Redshift using Airflow'    
+    description = 'ETL pipeline to Redshift using Airflow', 
     schedule_interval = '0 * * * *'
 )
 

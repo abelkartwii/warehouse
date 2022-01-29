@@ -1,15 +1,16 @@
-version:
+version: '1.0'
 services:
   metabase:
     image: metabase/metabase
     ports:
       - "3000:3000"
   postgres:
-    image: postgres:9.6
+    image: postgres:9.6-alpine
     environment:
-      - POSTGRES_USER = airflow
-      - POSTGRES_PASSWORD = airflow
-      - POSTGRES_DB = airflow
+      - POSTGRES_USER=airflow
+      - POSTGRES_PASSWORD=airflow
+      - POSTGRES_DB=airflow
+      - POSTGRES_HOST_AUTH_METHOD="trust"
   webserver:
     image: puckel/docker-airflow:1.10.9
     depends_on:
